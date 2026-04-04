@@ -1,0 +1,48 @@
+/* Підключаємо кольори від твоїх шпалер (Pywal) */
+@import url("/home/sf/.cache/wal/colors-waybar.css");
+
+* {
+    /* Можеш змінити шрифт на свій улюблений */
+    font-family: "JetBrainsMono Nerd Font", "Ubuntu", sans-serif; 
+    font-size: 10px;
+    font-weight: bold;
+    border: none;
+}
+
+/* Сама панель: робимо її темно-прозорою */
+window#waybar {
+    background-color: rgba(20, 20, 30, 0.7); 
+    color: #ffffff;
+}
+
+/* Робочі столи */
+#workspaces {
+    margin: 2px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+#workspaces button {
+    padding: 0 10px;
+    color: @color7; /* Колір тексту від шпалер */
+    border-radius: 10px;
+}
+
+#workspaces button.active {
+    background-color: @color2; /* Колір від шпалер для активного вікна! */
+    color: #000000;
+}
+
+/* Модулі (годинник, інтернет, звук, батарея) */
+#clock, #battery, #cpu, #memory, #network, #pulseaudio, #tray {
+    padding: 0 10px;
+    margin: 2px 4px;
+    background-color: rgba(0, 0, 0, 0.3); /* Напівпрозорі "капсули" */
+    color: @color2; /* Кольоровий текст від шпалер */
+    border-radius: 10px;
+}
+
+/* Робимо годинник трохи яскравішим */
+#clock {
+    color: @color3;
+}

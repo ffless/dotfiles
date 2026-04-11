@@ -1,0 +1,68 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 24,
+    "spacing": 4,
+
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "custom/cava",
+        "clock"
+    ],
+    "modules-right": [
+        "hyprland/language",
+        "network",
+        "pulseaudio",
+        "battery",
+        "tray"
+    ],
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1"
+    },
+
+    "custom/cava": {
+        "format": "{}",
+        "exec": "cava -p ~/.config/cava/config_waybar | sed -u 's/;//g;s/0/  /g;s/1/▂ /g;s/2/▃ /g;s/3/▄ /g;s/4/▅ /g;s/5/▆ /g;s/6/▇ /g;s/7/█ /g'"
+    },
+
+    "clock": {
+        "format": "{:%H:%M - %d.%m.%Y}",
+        "tooltip-format": "<tt>{calendar}</tt>"
+    },
+
+    "hyprland/language": {
+        "format": "{}",
+        "format-en": "EN",
+        "format-uk": "UA"
+    },
+
+    "network": {
+        "format-wifi": "WiFi: {essid}",
+        "format-ethernet": "LAN",
+        "format-disconnected": "No Net"
+    },
+
+    "pulseaudio": {
+        "format": "VOL: {volume}%",
+        "format-muted": "Muted",
+        "on-click": "pavucontrol"
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "BAT: {capacity}%",
+        "format-charging": "CHG: {capacity}%"
+    },
+
+    "tray": {
+        "spacing": 10
+    }
+}

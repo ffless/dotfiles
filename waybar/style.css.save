@@ -47,11 +47,4 @@ background-color: transparent;
     color: @color3;
 }
 
-#custom-cava {
-    background-color: alpha(@background, 0.6); /* Прозора капсула під колір шпалер */
-    color: @color2; /* Буде яскравим акцентом з ваших шпалер! Або напишіть #ffffff для білого */
-    border-radius: 12px;
-    padding: 0 10px;
-    margin: 4px 2px;
-    font-family: "JetBrainsMono Nerd Font"; /* Щоб символи були чіткими */
-}
+

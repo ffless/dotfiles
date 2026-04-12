@@ -3,7 +3,7 @@
 
 * {
     /* Можеш змінити шрифт на свій улюблений */
-    font-family: "JetBrainsMono Nerd Font", "Ubuntu", sans-serif; 
+    font-family: "JetBrainsMono Nerd Font", "Ubuntu", sans-serif;
     font-size: 10px;
     font-weight: bold;
     border: none;
@@ -11,7 +11,7 @@
 
 /* Сама панель: робимо її темно-прозорою */
 window#waybar {
-background-color: transparent;
+    background-color: transparent;
     /* всі інші рядочки в цьому блоці, якщо вони є, залишайте */
 }
 
@@ -37,21 +37,37 @@ background-color: transparent;
 #clock, #language, #battery, #cpu, #memory, #network, #pulseaudio, #tray {
     padding: 0 10px;
     margin: 2px 4px;
-    background-color: rgba(0, 0, 0, 0.3); /* Напівпрозорі "капсули" */
-    color: @color2; /* Кольоровий текст від шпалер */
+    background-color: @color2; /* було rgba(0,0,0,0.3) */
+    color: #000000;            /* було @color2 */
     border-radius: 10px;
 }
 
 /* Робимо годинник трохи яскравішим */
 #clock {
-    color: @color3;
+    background-color: @color2;
+    color: #000000;
 }
 
 #custom-cava {
-    background: rgba(0, 0, 0, 0.6); /* Темніший фон */
-    color: #b4befe;               /* Світло-синій колір (або твій @color2) */
+    background: rgba(0, 0, 0, 0.6);
+    color: #b4bef3;
     border-radius: 12px;
     padding: 0 12px;
-    font-size: 18px;              /* Більший розмір — вищі стовпчики */
+    font-size: 18px;
     margin: 4px 0;
+}
+
+#mpris {
+    background-color: @color2;
+    color: #000000;
+    border-radius: 10px;
+    padding: 0 12px;
+    margin: 2px 4px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+#mpris.paused {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: @color7;
 }

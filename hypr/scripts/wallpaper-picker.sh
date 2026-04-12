@@ -27,10 +27,7 @@ done
 chosen=$(printf "%b" "$entries" | rofi -dmenu \
     -p "Шпалери" \
     -show-icons \
-    -theme-str 'element-icon { size: 10em; border-radius: 6px; }' \
-    -theme-str 'listview { columns: 3; lines: 3; }' \
-    -theme-str 'element { orientation: vertical; }' \
-    -theme-str 'element-text { horizontal-align: 0.5; }')
+    -theme ~/.config/rofi/wallpaper.rasi)
 
 [ -z "$chosen" ] && exit
 

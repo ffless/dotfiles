@@ -48,10 +48,10 @@ background-color: transparent;
 }
 
 #custom-cava {
-    background-color: alpha(@background, 0.6); /* Прозора капсула під колір шпалер */
-    color: @color2; /* Буде яскравим акцентом з ваших шпалер! Або напишіть #ffffff для білого */
+    background: rgba(0, 0, 0, 0.6); /* Темніший фон */
+    color: #b4befe;               /* Світло-синій колір (або твій @color2) */
     border-radius: 12px;
-    padding: 0 10px;
-    margin: 4px 2px;
-    font-family: "JetBrainsMono Nerd Font"; /* Щоб символи були чіткими */
+    padding: 0 12px;
+    font-size: 18px;              /* Більший розмір — вищі стовпчики */
+    margin: 4px 0;
 }

@@ -49,24 +49,12 @@ window#waybar {
 }
 
 #custom-cava {
-    /* Робимо фон напівпрозорим, щоб він пропускав шпалери (як інші капсули) */
-    background-color: rgba(30, 30, 46, 0.6); 
-    
-    /* Акцентний колір для самих смужок */
-    color: @color6; 
-    
-    /* Сильне заокруглення для форми "пігулки" */
-    border-radius: 24px; 
-    
-    /* Відступи: перша цифра (4px) додасть висоти зверху і знизу, друга (15px) - по боках */
-    padding: 4px 15px;
-    
-    /* Вирівнюємо по висоті з воркспейсами */
-    margin-top: 4px;
-    margin-bottom: 4px;
-    
-    /* Робимо смужки трохи вищими та чіткішими */
-    font-size: 14px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #b4bef3;
+    border-radius: 12px;
+    padding: 0 12px;
+    font-size: 18px;
+    margin: 4px 0;
 }
 
 #mpris {

@@ -34,7 +34,7 @@ window#waybar {
 }
 
 /* Модулі (годинник, інтернет, звук, батарея) */
-#clock, #language, #battery, #cpu, #memory, #network, #pulseaudio, #tray {
+#custom-prev, #custom-next, #mpris, #clock, #language, #battery, #cpu, #memory, #network, #pulseaudio, #tray {
     padding: 0 10px;
     margin: 2px 4px;
     background-color: @color2; /* було rgba(0,0,0,0.3) */
@@ -70,4 +70,22 @@ window#waybar {
 #mpris.paused {
     background-color: rgba(0, 0, 0, 0.3);
     color: @color7;
+}
+
+
+#custom-prev {
+    margin-right: 4px; /* Відступ між кнопкою "назад" і плеєром */
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+#custom-next {
+    margin-left: 4px;  /* Відступ між плеєром і кнопкою "вперед" */
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+#mpris {
+    margin-left: 0px;
+    margin-right: 0px;
 }

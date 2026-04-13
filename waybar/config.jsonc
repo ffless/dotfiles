@@ -11,7 +11,9 @@
         "clock"
     ],
     "modules-right": [
+        "custom/prev",
         "mpris",
+        "custom/next",
         "hyprland/language",
         "network",
         "pulseaudio",
@@ -43,14 +45,19 @@
     },
 
     "network": {
-        "format-wifi": "WiFi: {essid}",
-        "format-ethernet": "LAN",
-        "format-disconnected": "No Net"
+        "format-wifi": "  {essid}",
+        "format-ethernet": "󰈀  LAN",
+        "format-disconnected": "󰤮  Off",
+        "max-length": 12, 
+        "tooltip-format": "{essid} ({signalStrength}%) "
     },
 
     "pulseaudio": {
-        "format": "VOL: {volume}%",
-        "format-muted": "Muted",
+        "format": "{icon}  {volume}%",
+        "format-muted": "󰖁  Muted",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
         "on-click": "pavucontrol"
     },
 
@@ -59,24 +66,32 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "BAT: {capacity}%",
-        "format-charging": "CHG: {capacity}%"
+        "format": "{icon}  {capacity}%",
+        "format-charging": "󰂄  {capacity}%",
+        "format-plugged": "  {capacity}%",
+        "format-icons": ["", "", "", "", ""]
     },
 
     "tray": {
-        "spacing": 10
+        "spacing": 8
+    },
+
+   "custom/prev": {
+        "format": "󰒮",
+        "on-click": "playerctl previous",
+        "tooltip": false
     },
 
     "mpris": {
-        "format": "{status_icon} {title} - {artist}",
-        "format-paused": "{status_icon} <i>{title} - {artist}</i>",
-        "status-icons": {
-            "playing": "󰏤",
-            "paused": "󰐊"
-        },
-        "max-length": 35,
-        "on-click": "playerctl play-pause",
-        "on-scroll-up": "playerctl next",
-        "on-scroll-down": "playerctl previous"
+        "format": "󰎆  {title} - {artist}",
+        "format-paused": "󰎆  <i>{title} - {artist}</i>",
+        "max-length": 20,
+        "on-click": "playerctl play-pause"
+    },
+
+    "custom/next": {
+        "format": "󰒭",
+        "on-click": "playerctl next",
+        "tooltip": false
     }
 }

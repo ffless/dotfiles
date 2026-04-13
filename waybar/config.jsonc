@@ -34,8 +34,8 @@
     },
 
     "clock": {
-        "format": "{:%H:%M - %d.%m.%Y}",
-        "tooltip-format": "<tt>{calendar}</tt>"
+        "format": "{:%H:%M / %d.%m.%y}",
+        "tooltip-format": "{:%Y %B}"
     },
 
     "hyprland/language": {

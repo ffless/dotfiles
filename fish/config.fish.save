@@ -1,0 +1,40 @@
+# Вимикаємо перенос рядка
+add_newline = false
+
+# Структура: Пігулка з ОС та Юзером -> Шлях -> Символ вводу
+format = """
+[](surface0)\
+$os\
+$username\
+[](surface0)\
+$directory\
+$character\
+"""
+
+# Налаштування кольорів (стиль Catppuccin/MD3)
+# Можеш замінити 'surface0' на 'gray', якщо не використовуєш палітру кольорів
+[palettes.catppuccin]
+surface0 = "#313244"
+
+[os]
+disabled = false
+style = "bg:surface0 fg:blue"
+symbols = { Arch = "󰣇 " } # Тонкий логотип Arch
+
+[username]
+show_always = true
+style_user = "bg:surface0 fg:blue"
+format = "[$user]($style)"
+
+[directory]
+style = "fg:lavender"
+# Замість емодзі папки — тонкий символ Nerd Font
+format = " [󰉋 ](fg:blue) [$path]($style) "
+truncation_length = 3
+truncation_symbol = "…/"
+
+[character]
+# Ось твій MD3 символ вводу (чиста стрілка/шеврон)
+success_symbol = " [❯](bold blue)" 
+error_symbol = " [❯](bold red)"
+# Можеш також спробувати варіант "󰄾" або "󰅂" — вони теж дуже MD3

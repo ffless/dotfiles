@@ -1,84 +1,95 @@
-/* Підключаємо кольори від твоїх шпалер (Pywal) */
+/* * MATERIAL DESIGN 3 - PIXEL STABLE 🐾 
+ * Тільки стабільний код та круті ховери
+ */
+
 @import url("/home/ffless/.cache/wal/colors-waybar.css");
 
 * {
-    font-family: "JetBrainsMono Nerd Font", "Ubuntu", sans-serif;
-    font-size: 11px;
-    font-weight: bold;
+    font-family: "Google Sans", "Inter", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    border: none;
+    box-shadow: none;
 }
 
-/* Сама панель прозора */
 window#waybar {
     background-color: transparent;
 }
 
 /* --- РОБОЧІ СТОЛИ --- */
 #workspaces {
-    margin: 4px 4px;
-    border-radius: 50px;
-    /* 2. Темно-прозорий фон замість суцільного чорного */
-    background-color: rgba(0, 0, 0, 0.6); 
-    /* 3. Яскравий акцентний колір 2 */
-    border: 2px solid @color2; 
-    /* 1. Додаємо малесенький відступ всередині контейнера, щоб кнопка не "різала" рамку */
-    padding: 2px; 
+    margin: 2px 4px;
+    border-radius: 12px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 2px solid @color2;
+    padding: 2px 4px;
 }
 
 #workspaces button {
-    /* 1. Фікс зайвого простору: робимо акуратні симетричні кнопки */
-    padding: 0 8px; 
-    margin: 0;
-    min-width: 24px; /* Робимо їх трішки ширшими для балансу */
-    color: @color2; /* Яскравий текст */
-    border-radius: 50px;
-    transition: all 0.2s ease;
-    border: none;
-    box-shadow: none; /* Забираємо системні тіні, які робили баг */
-}
-
-#workspaces button.active {
-    background-color: @color2; /* Яскравий фон для активного вікна */
-    color: #000000; /* Чорний текст на яскравому читається найкраще */
-}
-
-#workspaces button:hover {
-    background-color: rgba(255, 255, 255, 0.15);
-}
-
-/* --- ВСІ ІНШІ МОДУЛІ (КАПСУЛИ З ОБВОДКОЮ) --- */
-#custom-prev, #custom-next, #mpris, #clock, #language, #battery, #cpu, #memory, #network, #pulseaudio, #tray, #custom-cava {
-    padding: 0 15px;
-    margin: 4px 4px;
-    /* Темно-прозорий фон для всіх модулів */
-    background-color: rgba(0, 0, 0, 0.6); 
-    border: 2px solid @color2; /* Яскрава обводка */
-    color: @color2; /* Яскравий текст/іконки */
-    border-radius: 50px; 
-}
-
-/* Окремі винятки для плеєра */
-#mpris {
-    margin-left: 0px;
-    margin-right: 0px;
+    padding: 0;
+    min-width: 28px; 
+    min-height: 22px;
+    color: @color2;
+    margin: 1px;
     transition: all 0.3s ease;
+    border-radius: 8px;
 }
 
-#mpris.paused {
-    border-color: @color8; /* Сірий, коли на паузі */
-    color: @color8;
+#workspaces button.active,
+#workspaces button.focused {
+    background-color: @color2;
+    color: @color0;
+}
+
+/* --- ПРАВА ЧАСТИНА --- */
+#clock, #language, #battery, #cpu, #memory, #network, #pulseaudio, #tray {
+    padding: 0 10px;
+    margin: 2px 2px;
+    background-color: @color2;
+    color: @color0;
+    border-radius: 10px;
+    min-height: 22px;
+}
+
+/* --- ПЛЕЄР --- */
+#custom-prev, #mpris, #custom-next {
+    background-color: @color2;
+    color: @color0;
+    /* Плавний перехід для ховеру та паузи */
+    transition: all 0.2s ease;
 }
 
 #custom-prev {
-    margin-right: 4px; 
+    padding: 0 6px 0 10px;
+    margin: 2px 0 2px 4px;
+    border-radius: 18px 4px 4px 18px;
+}
+
+#mpris {
+    padding: 0 12px;
+    margin: 2px 1px;
+    border-radius: 4px;
+    min-width: 90px;
 }
 
 #custom-next {
-    margin-left: 4px;  
+    padding: 0 10px 0 6px;
+    margin: 2px 4px 2px 0;
+    border-radius: 4px 18px 18px 4px;
 }
 
-/* Еквалайзер cava */
-#custom-cava {
-    padding: 0 20px;
-    font-size: 16px;
-    color: @color2; /* Робимо еквалайзер теж яскравим */
+/* АНІМАЦІЯ ПРИ НАВЕДЕННІ (HOVER) */
+#custom-prev:hover, #custom-next:hover {
+    background-color: @color3; /* Колір акценту при наведенні */
+    color: @color15;
+}
+
+/* СТАН ПАУЗИ (ТІЛЬКИ КОЛІР) */
+#mpris.paused, #custom-prev.paused, #custom-next.paused {
+    background-color: @color8;
+    color: @color15;
+}
+
+#clock {
+    font-weight: 800;
 }

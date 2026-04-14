@@ -14,7 +14,6 @@
         "custom/prev",
         "mpris",
         "custom/next",
-        "hyprland/language",
         "network",
         "pulseaudio",
         "battery",
@@ -77,20 +76,20 @@
     },
 
    "custom/prev": {
-        "format": "󰒮",
+        "format": "",
         "on-click": "playerctl previous",
         "tooltip": false
     },
 
     "mpris": {
-        "format": "󰎆  {title} - {artist}",
-        "format-paused": "󰎆  <i>{title} - {artist}</i>",
+        "format": "󰎈  {title} - {artist}", // Тонка нота замість жирної
+        "format-paused": "󰎈  {title} - {artist}",
         "max-length": 20,
         "on-click": "playerctl play-pause"
     },
 
     "custom/next": {
-        "format": "󰒭",
+        "format": "",
         "on-click": "playerctl next",
         "tooltip": false
     }

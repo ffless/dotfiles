@@ -1,96 +1,301 @@
+//  █████  ████████ ██ ███████        ██ ██   ██  ██████  ██████  
+// ██   ██    ██    ██ ██            ███ ██   ██ ██  ████      ██ 
+// ███████    ██    ██ █████   █████  ██ ███████ ██ ██ ██  █████  
+// ██   ██    ██    ██ ██             ██      ██ ████  ██ ██      
+// ██   ██    ██    ██ ██             ██      ██  ██████  ███████ 
+                                                                       
 {
-    "layer": "top",
-    "position": "top",
-    "height": 24,
-    "spacing": 4,
+  "reload_style_on_change": true,
+  "layer": "top",
+  "position": "top",
+  "spacing": 0,
+  "height": 24,
 
-    "modules-left": [
-        "hyprland/workspaces"
-    ],
-    "modules-center": [
-        "clock"
-    ],
-    "modules-right": [
-        "custom/prev",
-        "mpris",
-        "custom/next",
-        "network",
-        "pulseaudio",
-        "battery",
-        "tray"
-    ],
+  "border-radius": 25,
 
-    "hyprland/workspaces": {
-        "format": "{icon}",
-        "on-scroll-up": "hyprctl dispatch workspace e+1",
-        "on-scroll-down": "hyprctl dispatch workspace e-1"
+  "margin-top": 2,
+  "margin-left": 10,
+  "margin-right": 10,
+
+  "modules-left": [
+    "custom/omarchy",
+    "hyprland/workspaces",
+    "mpris"
+  ],
+
+  "modules-center": [
+    "custom/mpris"
+  ],
+
+  "modules-right": [
+    "group/ctl",
+    "group/stats",
+    "clock"
+  ],
+
+  // ======================
+  // HYPRLAND
+  // ======================
+
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "format": "{icon}",
+    "format-icons": {
+      "1": "<span size='13500'>󰬺</span>",
+      "2": "<span size='13500'>󰬻</span>",
+      "3": "<span size='13500'>󰬼</span>",
+      "4": "<span size='13500'>󰬽</span>",
+      "5": "<span size='13500'>󰬾</span>",
+      "6": "<span size='13500'>󰬿</span>",
+      "7": "<span size='13500'>󰭀</span>",
+      "8": "<span size='13500'>󰭁</span>",
+      "9": "<span size='13500'>󰭂</span>",
+      "10": "<span size='13500'>󰿩</span>"
     },
-
-    "custom/cava": {
-        "format": "{}",
-        "exec": "cava -p ~/.config/cava/config_waybar | sed -u 's/;//g;s/0/ /g;s/1/ /g;s/2/▂/g;s/3/▃/g;s/4/▄/g;s/5/▅/g;s/6/▆/g;s/7/▇/g;s/8/█/g;'",
-        "restart-interval": 1
-    },
-
-    "clock": {
-        "format": "{:%H:%M / %d.%m.%y}",
-        "tooltip-format": "{:%Y %B}"
-    },
-
-    "hyprland/language": {
-        "format": "{}",
-        "format-en": "EN",
-        "format-uk": "UA"
-    },
-
-    "network": {
-        "format-wifi": "     {essid}",
-        "format-ethernet": "󰈀  LAN",
-        "format-disconnected": "󰤮  Off",
-        "max-length": 12, 
-        "tooltip-format": "{essid} ({signalStrength}%) "
-    },
-
-    "pulseaudio": {
-        "format": "{icon}    {volume}%",
-        "format-muted": "󰖁  Muted",
-        "format-icons": {
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
-    },
-
-    "battery": {
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon}  {capacity}%",
-        "format-charging": "󰂄  {capacity}%",
-        "format-plugged": "  {capacity}%",
-        "format-icons": ["", "", "", "", ""]
-    },
-
-    "tray": {
-        "spacing": 8
-    },
-
-   "custom/prev": {
-        "format": "",
-        "on-click": "playerctl previous",
-        "tooltip": false
-    },
-
-    "mpris": {
-        "format": "󰎈  {title} - {artist}", // Тонка нота замість жирної
-        "format-paused": "󰎈  {title} - {artist}",
-        "max-length": 20,
-        "on-click": "playerctl play-pause"
-    },
-
-    "custom/next": {
-        "format": "",
-        "on-click": "playerctl next",
-        "tooltip": false
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": []
     }
+  },
+
+  // ======================
+  // CORE MODULES
+  // ======================
+
+  "clock": {
+    "format": "{:%I:%M %p}",
+    "format-alt": "{:%e %B %A}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+
+  "cpu": {
+    "interval": 2,
+    "format": "{icon} {usage} ",
+    "format-icons": ["󰪞","󰪟","󰪠","󰪡","󰪢","󰪣","󰪤","󰪥"],
+    "on-click": "omarchy-launch-or-focus-tui btop"
+  },
+
+  "memory": {
+    "interval": 2,
+    "format": "{icon} {percentage}",
+    "format-icons": ["󰪞","󰪟","󰪠","󰪡","󰪢","󰪣","󰪤","󰪥"],
+    "on-click": "omarchy-launch-or-focus-tui btop"
+  },
+
+  "network": {
+    "interval": 3,
+    "spacing": 1,
+
+    "format": "{icon}",
+    "format-wifi": "{icon}",
+    "format-ethernet": "󰌘",
+    "format-disconnected": "󰤮",
+
+    "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
+
+    "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes} ⇡{bandwidthUpBytes}",
+    "tooltip-format-ethernet": "⇣{bandwidthDownBytes} ⇡{bandwidthUpBytes}",
+    "tooltip-format-disconnected": "Disconnected",
+
+    "on-click": "omarchy-launch-wifi"
+  },
+
+  "battery": {
+    "interval": 5,
+
+    "format": "{capacity}% {icon}",
+    "format-discharging": "{icon}",
+    "format-charging": "{icon}",
+    "format-plugged": "",
+    "format-full": "󰂅",
+
+    "format-icons": {
+      "charging": ["󰢜","󰂆","󰂇","󰂈","󰢝","󰂉","󰢞","󰂊","󰂋","󰂅"],
+      "default": ["󰁺","󰁻","󰁼","󰁽","󰁾","󰁿","󰂀","󰂁","󰂂","󰁹"]
+    },
+
+    "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
+    "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
+
+    "on-click": "omarchy-menu power",
+
+    "states": {
+      "warning": 20,
+      "critical": 10
+    }
+  },
+
+  "bluetooth": {
+    "format": "",
+    "format-disabled": "󰂲",
+    "format-connected": "",
+    "format-no-controller": "",
+    "tooltip-format": "Devices connected: {num_connections}",
+    "on-click": "omarchy-launch-bluetooth"
+  },
+
+  "pulseaudio": {
+    "format": "{icon}",
+    "format-muted": "",
+
+    "format-icons": {
+      "default": ["","",""]
+    },
+
+    "scroll-step": 5,
+    "tooltip-format": "Playing at {volume}%",
+
+    "on-click": "omarchy-launch-or-focus-tui wiremix",
+    "on-click-right": "pamixer -t"
+  },
+
+  "mpris": {
+    "interval": 10,
+
+    "format": "{player_icon} {dynamic}",
+    "format-paused": "{status_icon} {artist} {title}",
+
+    "scroll-step": 5,
+    "smooth-scrolling-threshold": 1,
+
+    "tooltip": true,
+    "tooltip-format": "{status_icon} {dynamic}\nLeft: previous\nMiddle: pause\nRight: next",
+
+    "on-click": "playerctl previous",
+    "on-click-middle": "playerctl play-pause",
+    "on-click-right": "playerctl next",
+
+    "on-scroll-up": "$HOME/.config/hypr/scripts/volume.sh --inc",
+    "on-scroll-down": "$HOME/.config/hypr/scripts/volume.sh --dec",
+
+    "player-icons": {
+      "chromium": "",
+      "firefox": "",
+      "spotify": "󰎆",
+      "vlc": "󰕼",
+      "mpv": "󰐹",
+      "mopidy": "",
+      "kdeconnect": "",
+      "default": ""
+    },
+
+    "status-icons": {
+      "playing": "",
+      "paused": "",
+      "stopped": ""
+    },
+
+    "dynamic-order": ["artist","title"],
+    "ignored-players": ["zen"],
+    "max-length": 40
+  },
+
+  // ======================
+  // GROUPS
+  // ======================
+
+  "group/stats": {
+    "orientation": "inherit",
+    "modules": [
+      "cpu",
+      "memory",
+      "battery"
+    ]
+  },
+
+  "group/misc-expander": {
+    "orientation": "inherit",
+
+    "modules": [
+      "custom/expand-icon",
+      "custom/screenrecording-indicator",
+      "custom/update",
+      "custom/idle-indicator",
+      "custom/notification-silencing-indicator",
+      "power-profiles-daemon",
+      "tray"
+    ],
+
+    "drawer": {
+      "transition-duration": 600,
+      "children-class": "misc-group-item"
+    }
+  },
+
+  "group/ctl": {
+     "orientation": "inherit",
+    "modules": [
+        "network",
+        "bluetooth",
+        "pulseaudio"
+    ]
+  },
+
+  // ======================
+  // CUSTOM MODULES
+  // ======================
+
+  "custom/omarchy": {
+    "format": "",
+    "on-click": "omarchy-menu",
+    "on-click-right": "xdg-terminal-exec",
+    "tooltip-format": "Omarchy Menu\n\nSuper + Alt + Space"
+  },
+
+  "custom/update": {
+    "format": "",
+    "exec": "omarchy-update-available",
+    "on-click": "omarchy-launch-floating-terminal-with-presentation omarchy-update",
+    "tooltip-format": "Omarchy update available",
+    "signal": 7,
+    "interval": 21600
+  },
+
+  "custom/screenrecording-indicator": {
+    "exec": "$OMARCHY_PATH/default/waybar/indicators/screen-recording.sh",
+    "on-click": "omarchy-cmd-screenrecord",
+    "signal": 8,
+    "return-type": "json"
+  },
+
+  "custom/idle-indicator": {
+    "exec": "$OMARCHY_PATH/default/waybar/indicators/idle.sh",
+    "on-click": "omarchy-toggle-idle",
+    "signal": 9,
+    "return-type": "json"
+  },
+
+  "custom/notification-silencing-indicator": {
+    "exec": "$OMARCHY_PATH/default/waybar/indicators/notification-silencing.sh",
+    "on-click": "omarchy-toggle-notification-silencing",
+    "signal": 10,
+    "return-type": "json"
+  },
+
+  "custom/expand-icon": {
+    "format": "",
+    "tooltip": false
+  },
+
+  "tray": {
+    "icon-size": 12,
+    "spacing": 4
+  },
+
+  "power-profiles-daemon": {
+    "format": "{icon}",
+
+    "tooltip": true,
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
+  }
 }

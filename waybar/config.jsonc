@@ -44,7 +44,7 @@
     },
 
     "network": {
-        "format-wifi": "  {essid}",
+        "format-wifi": "     {essid}",
         "format-ethernet": "󰈀  LAN",
         "format-disconnected": "󰤮  Off",
         "max-length": 12, 
@@ -52,7 +52,7 @@
     },
 
     "pulseaudio": {
-        "format": "{icon}  {volume}%",
+        "format": "{icon}    {volume}%",
         "format-muted": "󰖁  Muted",
         "format-icons": {
             "default": ["", "", ""]

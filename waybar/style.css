@@ -20,7 +20,7 @@ window#waybar {
 #workspaces {
     margin: 2px 4px;
     border-radius: 12px;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: alpha(@background, 0.8);
     border: 2px solid @color2;
     padding: 2px 4px;
 }
@@ -35,11 +35,20 @@ window#waybar {
     border-radius: 8px;
 }
 
+#workspaces button:hover {
+    box-shadow: inherit;
+    text-shadow: inherit;
+    /* Отримуємо той самий color3, як в MPRIS */
+    background: @color3; 
+    color: @background; /* Робимо текст темним, щоб він не зливався зі світлим фоном */
+}
+
 #workspaces button.active,
 #workspaces button.focused {
     background-color: @color2;
     color: @color0;
 }
+
 
 /* --- ПРАВА ЧАСТИНА --- */
 #clock, #language, #battery, #cpu, #memory, #network, #pulseaudio, #tray {
@@ -79,7 +88,7 @@ window#waybar {
 }
 
 /* АНІМАЦІЯ ПРИ НАВЕДЕННІ (HOVER) */
-#custom-prev:hover, #custom-next:hover {
+#custom-prev:hover, #custom-next:hover, #mpris:hover {
     background-color: @color3; /* Колір акценту при наведенні */
     color: @color15;
 }

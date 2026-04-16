@@ -4,6 +4,14 @@
     "height": 24,
     "spacing": 4,
 
+// ДОДАЄМО ЦІ РЯДКИ:
+    "margin-top": 4,      // Відступ від верхнього краю екрану
+    "margin-left": 12,     // Відступ зліва
+    "margin-right": 12,    // Відступ справа
+    "margin-bottom": 0,    // Знизу зазвичай залишають 0
+
+
+
     "modules-left": [
         "hyprland/workspaces"
     ],
@@ -65,7 +73,7 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon}  {capacity}%",
+        "format": "{icon}     {capacity}%",
         "format-charging": "󰂄  {capacity}%",
         "format-plugged": "  {capacity}%",
         "format-icons": ["", "", "", "", ""]

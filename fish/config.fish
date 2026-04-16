@@ -29,3 +29,7 @@ set -g fish_greeting
 # Запускаємо наш фастфетч з рандомною картинкою
 fastfetch
 
+
+# bun
+#set --export BUN_INSTALL "$HOME/.bun"
+#set --export PATH $BUN_INSTALL/bin $PATH

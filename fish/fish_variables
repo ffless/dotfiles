@@ -1,4 +1,4 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR __fish_initialized:4300
-SETUVAR fish_user_paths:/home/sf/\x2elocal/bin
+SETUVAR fish_user_paths:/home/ffless/\x2ebun/bin\x1e/home/sf/\x2elocal/bin

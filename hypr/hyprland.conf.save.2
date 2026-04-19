@@ -147,13 +147,14 @@ decoration {
 
    blur {
 enabled = true
+        
         size = 5  #more (5)
         passes = 4 #less (4)
         
         ignore_opacity = true
         
         new_optimizations = true
-        xray = true
+        xray = false
         
         noise = 0.0117
         contrast = 0.8916
@@ -176,9 +177,15 @@ animations {
     animation = windowsIn, 1, 4, md3_decel, slide bottom
     animation = windowsOut, 1, 4, md3_accel, slide bottom
     
+
+    # 3. Переміщення вікон і перемикання робочих столів (збережено, як ти просив)
+    # 3. Переміщення вікон і перемикання робочих столів (збережено, як ти просив)
+
+
     animation = windowsMove, 1, 4, md3_decel, slide
     animation = workspaces, 1, 5, md3_decel, slide
 
+    # 4. Інші дрібниці
     animation = border, 1, 1, liner
     animation = borderangle, 1, 30, liner, loop
     animation = fade, 1, 3, md3_decel

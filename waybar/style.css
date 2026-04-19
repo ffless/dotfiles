@@ -1,7 +1,3 @@
-/* * MATERIAL DESIGN 3 - PIXEL STABLE 🐾 
- * Тільки стабільний код та круті ховери
- */
-
 @import url("/home/ffless/.cache/wal/colors-waybar.css");
 
 * {
@@ -38,9 +34,9 @@ window#waybar {
 #workspaces button:hover {
     box-shadow: inherit;
     text-shadow: inherit;
-    /* Отримуємо той самий color3, як в MPRIS */
+    /* MPRIS */
     background: @color3; 
-    color: @background; /* Робимо текст темним, щоб він не зливався зі світлим фоном */
+    color: @background; 
 }
 
 #workspaces button.active,
@@ -87,13 +83,13 @@ window#waybar {
     border-radius: 4px 18px 18px 4px;
 }
 
-/* АНІМАЦІЯ ПРИ НАВЕДЕННІ (HOVER) */
+/* (HOVER) */
 #custom-prev:hover, #custom-next:hover, #mpris:hover {
     background-color: @color3; /* Колір акценту при наведенні */
     color: @color15;
 }
 
-/* СТАН ПАУЗИ (ТІЛЬКИ КОЛІР) */
+/* (КОЛІР) */
 #mpris.paused, #custom-prev.paused, #custom-next.paused {
     background-color: @color8;
     color: @color15;

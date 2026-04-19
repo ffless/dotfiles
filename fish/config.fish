@@ -28,7 +28,7 @@ set -g fish_greeting
 
 # Запускаємо наш фастфетч з рандомною картинкою
 fastfetch
-
+#neofetch
 
 # bun
 #set --export BUN_INSTALL "$HOME/.bun"
